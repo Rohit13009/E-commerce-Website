@@ -50,12 +50,11 @@ app.post("/account",async (req,res)=>{
     
     try {
        const {name,email,password}=req.body;
-       db.query('SELECT * FROM `ecommerce`.userData WHERE email=?',[email],async (err,results)=>{
+      db.query('SELECT email FROM `ecommerce`.userData WHERE email=?',[email],async (err,results)=>{
              if(err){
                  console.log(err);
-             }else if(password>=0){
-                 return res.render("index");
-            
+             }else if(results.length>0){
+                 return res.send("This email is already in use for try another email please refresh the page");
              }
 
              db.query('INSERT INTO `ecommerce`.userData SET ?',{name:name, email:email, password:password},(err,results)=>{
