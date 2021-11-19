@@ -21,9 +21,9 @@ const view_path=path.join(__dirname,"/template/views");
 const staticpath=path.join(__dirname,"/web"); 
 app.use(express.static(staticpath));
 app.set("views",view_path);
-app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 // hbs.registerPartials(partial_path);
-app.use("/",require("./routes/hbs"));
+app.use("/",require("./routes/ejs"));
 
 
 
