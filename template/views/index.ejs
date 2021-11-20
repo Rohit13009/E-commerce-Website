@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" width="device-width initial-scale=1.0">
-    <title>RedStore | Ecommerce website</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" 
-    rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    rel="stylesheet">
-</head>
+    
+<%- include ('./partials/header.ejs') %>
 
 <body>
     <div class="header">
@@ -19,15 +10,7 @@
                 <div class="logo">
                     <img src="images/logo.png" width="125px">
                 </div>
-                <nav>
-                    <ul id="menuItems">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/products">Products</a></li>
-                        <li><a href="/product_details">About</a></li>
-                        <li><a href="">Contact Us</a></li>
-                        <li><a href="/account">Account</a></li>
-                    </ul>
-                </nav>
+                <%- include ('./partials/navbars.ejs') %>
                 <img src="images/cart.png" width="30px" height="30px">
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
