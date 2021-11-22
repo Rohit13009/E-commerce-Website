@@ -39,3 +39,4 @@ function login(){
     regForm.style.transform="translateX(300px)";
     loginForm.style.transform="translateX(3000px)";
 }
+

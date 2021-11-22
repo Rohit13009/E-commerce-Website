@@ -2,93 +2,92 @@
 <html lang="en">
 
 <%- include ('./partials/header.ejs') %>
-<body>
+
+    <body>
         <div class="header">
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                   <a href="/"><img src="images/logo.png" width="125px"></a>
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="/"><img src="images/logo.png" width="125px"></a>
+                    </div>
+
+                    <%- include ('./partials/navbars.ejs') %>
                 </div>
-
-               <%- include ('./partials/navbars.ejs') %>
-
-               <img src="images/cart.png" width="30px" height="30px">
-               </a> <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
         </div>
-        </div>
-        
+
 
         <div class="small-container">
-         <div class="row row-2">
-             <h2>All Products</h2>
-             <select>
-                 <option>Default Shorting</option>
-                 <option>Short By Price</option>
-                 <option>Short By Popularity</option>
-             </select>
-         </div>
-         
-         <div class="row">
-            <div class="col-4">
-                <img src="images/product-5.jpg">
-                <h4>Light Gray Snickers</h4>
-                <div class="rating">
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star-o"></i>
-                </div>
-                <p>Rs 999/-</p>
+            <div class="row row-2">
+                <h2>All Products</h2>
+                <select>
+                    <option>Default Shorting</option>
+                    <option>Short By Price</option>
+                    <option>Short By Popularity</option>
+                </select>
             </div>
-            <div class="col-4">
-               <img src="images/product-6.jpg">
-               <h4>Puma Black Printed T-Shirt </h4>
-                <div class="rating">
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star-o"></i>
+
+            <div class="row">
+                <div class="col-4">
+                    <img src="images/product-5.jpg">
+                    <h4>Light Gray Snickers</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>Rs 999/-</p>
                 </div>
-                <p>Rs 299/-</p>
+                <div class="col-4">
+                    <img src="images/product-6.jpg">
+                    <h4>Puma Black Printed T-Shirt </h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>Rs 299/-</p>
+                </div>
+                <div class="col-4">
+                    <img src="images/product-7.jpg">
+                    <h4>Combo socks Pack </h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <p>Rs 199/-</p>
+                </div>
+                <div class="col-4">
+                    <img src="images/product-8.jpg">
+                    <h4>Combo socks Pack </h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>Rs 199/-</p>
+                </div>
             </div>
-            <div class="col-4">
-               <img src="images/product-7.jpg">
-               <h4>Combo socks Pack </h4>
-                <div class="rating">
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star-half-o"></i>
-                </div>
-                <p>Rs 199/-</p>
-            </div>
-            <div class="col-4">
-               <img src="images/product-8.jpg">
-               <h4>Combo socks Pack </h4>
-                <div class="rating">
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star"></i>
-                   <i class="fa fa-star-o"></i>
-                   <i class="fa fa-star-o"></i>
-                </div>
-                <p>Rs 199/-</p>
+            <div class="page-btn">
+                <a href="products"><span>1</span></a>
+                <span>2</span>
+                <a href="/three"><span>3</span></a>
             </div>
         </div>
-        <div class="page-btn">
-            <a href="products"><span>1</span></a>
-            <span>2</span>
-            <a href="/three"><span>3</span></a>
-        </div>
-     </div>
 
-   <!---footer-->
+        <!---footer-->
 
-   <%- include ('./partials/footer.ejs') %>
-   <script src="./script.js"></script>
-</body>
+        <%- include ('./partials/footer.ejs') %>
+            <script src="./script.js"></script>
+    </body>
+
 </html>
