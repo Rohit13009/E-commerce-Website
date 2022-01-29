@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('../partials/header.ejs') %>
+
+    <body>
+        <div class="header">
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="/"><img src="images/logo.png" width="125px"></a>
+                    </div>
+                    <%- include ('../partials/navbars.ejs') %>
+
+                </div>
+            </div>
+        </div>
+            <% if(data.length>0){ %> 
+                <div class="small-container">
+
+                    <div class="row row-2">
+                        <h2>All Products</h2>
+                        <select>
+                            <option>Default Shorting</option>
+                            <option>Short By Price</option>
+                            <option>Short By Popularity</option>
+                        </select>
+                    </div>
+            
+                    
+                    <div class="small-container">
+                        <h2 class="title">Featured Products</h2>
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="images/product-1.jpg">
+                                <h4>Red Printed T-Shirt </h4>
+                                <h4>Rs 500/-</h4>
+                            </div>
+                            </div>
+                            </div>
+                   
+                   
+                    <input type="hidden" name="<%= data.id %>">
+            <% }else{ %>
+                <div class="small-container">
+                    <div class="row row-2">
+               <h1 class="title"> NO PRODUCTS FOUND! </h1>
+                </div>
+                </div>
+                <% } %>
+        </div>
+        </div>
+
+        <!---footer-->
+
+        <%- include ('../partials/footer.ejs') %>
+            <script src="./script.js"></script>
+    </body>
+
+</html>

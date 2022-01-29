@@ -1,0 +1,23 @@
+<% if(data.length>0){%>
+    <div class="testimonial">
+        <div class="small-container">
+            <% for(blogs of data){%>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa fa-quote-left"></i>
+                        <p><%= blogs.description%>
+                        </p>
+                        <img src="<%= blogs.imageUrl %>">
+                        <h3><%= blogs.title %></h3>
+                    </div>
+                </div>
+            <%}%>
+           
+        </div>
+    </div>
+     <%}else{%>
+        
+<div class="title"><h2>NO BLOGS FOUND!</h2></div>
+         <%}%>
+
+        

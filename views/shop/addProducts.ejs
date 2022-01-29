@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('../partials/header.ejs') %>
+<body>
+        <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="/"><img src="images/logo.png" width="125px"></a>
+                </div>
+                <%- include ('../partials/navbars.ejs') %>
+                
+            </div>
+        </div>
+        </div> 
+
+ <!----account-page---->
+
+         <div class="account-page">
+             <div class="container">
+                 <div class="row">
+                     <div class="col-2">
+                         <img src="images/image1.png" width="100%">
+                     </div>
+                     <div class="col-2">
+                         
+                            <h2>Add Your Products Here</h2>
+                              <form id="regForm" action="/addProducts" method="POST" autocomplete="off">
+                                 <input type="text" placeholder="title" name="email">
+                                 <input type="text" placeholder="imageUrl" name="password">
+                                 <input type="number" placeholder="price" name="price">
+                                 <input type="text" placeholder="description" name="description">
+                                 <button type="submit" class="btn" value="account">Register</button>
+                             </form>
+                         
+                     </div>
+                 </div>
+             </div>
+             </div>
+
+   <!---footer---->       
+   <%- include ('../partials/footer.ejs') %>
+   <!--<script src="./script.js"></script>-->
+   
+
+</body>
+</html>

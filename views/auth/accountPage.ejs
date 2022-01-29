@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('../partials/header.ejs') %>
+<body>
+        <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="/"><img src="images/logo.png" width="125px"></a>
+                </div>
+                <%- include ('../partials/navbars.ejs') %>
+                
+            </div>
+        </div>
+        </div> 
+
+ <!----account-page---->
+
+         <div class="account-page">
+             <div class="container">
+                 <div class="row">
+                     <div class="col-2">
+                         <img src="images/image1.png" width="100%">
+                     </div>
+                     <div class="col-2">
+                         <div class="form-container">
+                             <div class="form-btn">
+                                 <span onclick="login()">Login</span>
+                                 <span onclick="register()">Register</span>
+                                 <hr id="indicator">
+                             </div>
+                             <form id="loginForm" action="/account" method="POST" autocomplete="off">
+                                
+                                 <input type="email" placeholder="Email" name="email">
+                                 <input type="password" placeholder="Password" name="password">
+                                 <button type="submit" class="btn" value="account">Login</button>
+                                 
+                                 
+                             </form>
+                              <form id="regForm" action="/account" method="POST" autocomplete="off">
+                               
+                                 <input type="email" placeholder="Email" name="email">
+                                 <input type="password" placeholder="Password" name="password">
+                                 <input type="password" placeholder="Conform Password" name="password">
+                                 <button type="submit" class="btn" value="account">Register</button>
+                             </form>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+   <!---footer---->       
+   <%- include ('../partials/footer.ejs') %>
+   <!--<script src="./script.js"></script>-->
+   <script>
+       var loginForm=document.getElementById("loginForm");
+var regForm=document.getElementById("regForm");
+var indicator=document.getElementById("indicator");
+
+function register(){
+    regForm.style.transform="translateX(0px)";
+    loginForm.style.transform="translateX(0px)";
+    indicator.style.transform="translateX(100px)";
+}
+
+function login(){
+    regForm.style.transform="translateX(300px)";
+    loginForm.style.transform="translateX(300px)";
+    indicator.style.transform="translateX(0px)";
+}
+   </script>
+
+</body>
+</html>
