@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('../partials/header.ejs') %>
+
+    <body>
+        <div class="header">
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="/"><img src="/images/logo.png" width="125px"></a>
+                    </div>
+                    <nav>
+                        <ul id="menuItems">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/products">Products</a></li>
+                            <li><a href="">Contact Us</a></li>
+                            <li><a href="/account">Account</a></li>
+                        </ul>
+                    </nav>
+                    <a href="/cart"><img src="/images/cart.png" width="30px" height="30px"></a>
+                                    <img src="/images/menu.png" class="menu-icon" onclick="menutoggle()">
+
+                </div>
+            </div>
+        </div>
+
+        <!---single producst details-->
+
+        <div class="small-container single-product">
+            <div class="row">
+                <div class="col-2">
+                    <img src="<%= data.imageUrl %>" width="100%" id="ProductImg">
+                    <div class="small-img-row">
+                        <div class="small-img-col">
+                            <img src="<%= data.imageUrl %>" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="<%= data.imageUrl %>" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="<%= data.imageUrl %>" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="<%= data.imageUrl %>" width="100%" class="small-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h1><%= data.title %></h1>
+                    <h4>Rs <%= data.price %>/-</h4>
+                    <select>
+                        <option>Select Size</option>
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                    </select>
+                    <lable>Qty:</lable>
+                    <input type="number" value="1" min="1">
+                    <a href="/cart" class="btn">BuyNow</a>
+                    <a href="/cart" class="btn">Add to Cart</a>
+                    <h3>Product Details<i class="fa fa-indent"></i></h3><br>
+                    <p><%= data.description %>
+                    </p>
+
+                </div>
+            </div>
+        </div><br><br><br><br><br>
+
+        <!---title--->
+    
+
+        <!---footer-->
+
+        
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <h3>Download Our App</h3>
+                        <p>Download Our App for Android and ios mobile phones.</p>
+                        <div class="app-logo">
+                         <a href="https://play.google.com/store/apps" target="_blank"><img src="/images/play-store.png"></a>
+                         <a href="https://www.apple.com/app-store/" target="_blank"><img src="/images/app-store.png"></a>
+                        </div>
+                    </div>
+                    <div class="footer-col-2">
+                     <img src="/images/logo-white.png">
+                     <p>Our Purpose is to Sustainably Make the Pleasure and Benifits of Sports Accessible to
+                         the Many.
+                     </p>
+                 </div>
+                 <div class="footer-col-3">
+                     <h3>Useful Links</h3>
+                     <ul>
+                         <li>Coupens</li>
+                         <li>blog Post</li>
+                         <li>Return Policiy</li>
+                         <li>Join Affiliate</li>
+                     </ul>
+                 </div>
+                 <div class="footer-col-3">
+                     <h3>Follow Us</h3>
+                     <ul>
+                         <li>Facebook</li>
+                         <li>Twitter</li>
+                         <li>Instagram</li>
+                         <li>You tube</li>
+                     </ul>
+                 </div>
+                </div>
+                <hr>
+                <p class="copyright">Copyrights 2021 - Rohit Sangwan</p>
+            </div>
+        </div>
+        
+            <script src="./script.js"></script>
+    </body>
+
+</html>

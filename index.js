@@ -1,78 +1,57 @@
-const express=require("express");
-const app=express();
-const path=require("path");
-const mysql=require("mysql");
-const dotenv=require('dotenv');
-dotenv.config({path: './.env'});
-const hbs=require("hbs");
+const express = require('express');
+const app = express();
+// const mysql = require("mysql2");
+const path = require('path');
 const bodyParser = require('body-parser');
-const port=process.env.PORT || 1100;
+// const errorController = require('./controllers/error');
+// const session = require('express-session');
+// const MySQLStore = require('express-mysql-session')(session);
+// const multer = require('multer')
 
-
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-
-
-
-//engine templates path
-const view_path=path.join(__dirname,"/template/views");
-// {name:name, email:email, password:hashedPassword}
-const staticpath=path.join(__dirname,"/web"); 
-app.use(express.static(staticpath));
-app.set("views",view_path);
 app.set('view engine', 'ejs');
-// hbs.registerPartials(partial_path);
-app.use("/",require("./routes/ejs"));
+app.set('views', 'views');
 
+// const connection = mysql.createConnection({
+//   host : "localhost",
+//   user : "root",  
+//   database : "complete-nodejs",
+//   password : "1234"
+// });
+// const connection1 = connection.promise();
+// const sessionStore = new MySQLStore({}, connection1);
 
+// const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/index');
+const authRoutes = require('./routes/auth')
+// const authRoutes = require("./routes/auth");
 
+// const fileStorage = multer.diskStorage({
+//   destination:(req, file, cb)=>{
+//     cb(null, "image");
+//   },
+//   filename:(req,file,cb)=>{
+//     cb(null,file.originalname);
+//   }
+// })
 
-const db=mysql.createConnection({
-    host:process.env.DATABASE_HOST,
-    user:process.env.DATABASE_USER,
-    password:process.env.DATABASE_PASSWORD,
-    database:process.env.DATABASE
-});
+app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(multer({storage: fileStorage}).single('image'));
+app.use(express.static(path.join(__dirname, 'public/css')));
+app.use('/images',express.static(path.join(__dirname, 'images')));
+// app.use('/image',express.static(path.join(__dirname, 'image')));
+// app.use(
+//   session({
+//       secret: 'cookie_secret',
+//       resave: true,
+//       saveUninitialized: true,
+//       store: sessionStore,      // assigning sessionStore to the session
+//   })
+//   );
+  
+// app.use('/admin', adminRoutes);
+app.use(shopRoutes);
+app.use(authRoutes);
+// app.use(authRoutes);
+// app.use(errorController.get404);
 
-db.connect(function(err){
-    if(err){
-        console.log(err);
-    }else{
-        console.log("database is connected!");
-    }
-});
-
-
-
-
-app.post("/account",async (req,res)=>{
-    
-    try {
-       const {name,email,password}=req.body;
-      db.query('SELECT email FROM `ecommerce`.userData WHERE email=?',[email],async (err,results)=>{
-             if(err){
-                 console.log(err);
-             }else if(results.length>0){
-                 return res.send("This email is already in use for try another email please refresh the page");
-             }
-
-             db.query('INSERT INTO `ecommerce`.userData SET ?',{name:name, email:email, password:password},(err,results)=>{
-                 if(err){
-                     console.log(err);
-                 }else{
-                     return res.render('index');
-                 }
-             });
-       })
-    } catch (error) {
-        console.log(error)
-    }
-})
-
-
-
-
-app.listen(port,()=>{
-    console.log("server is started on port " +port)
-});
+app.listen(4000,()=>{console.log("server is running on port 4000")});
